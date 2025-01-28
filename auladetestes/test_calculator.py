@@ -70,6 +70,39 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'1000000000', response.data)  # Resultado esperado é '1000000000'
 
+<<<<<<< HEAD
+=======
+    # Teste de soma com números decimais
+    def test_soma_decimal(self):
+        self.assertEqual(self.calc.soma(1.5, 2.3), 3.8)
+        self.assertEqual(self.calc.soma(-1.5, 1.5), 0.0)
+
+    # * Teste de subtração com números negativos
+    def test_subtrai_negativo(self):
+        self.assertEqual(self.calc.subtrai(-5, -2), -3)
+        self.assertEqual(self.calc.subtrai(10, -5), 15)
+
+    # * Teste de multiplicação com números negativos e decimais
+    def test_multiplica_negativo_decimal(self):
+        self.assertEqual(self.calc.multiplica(-2, 3), -6)
+        self.assertEqual(self.calc.multiplica(2.5, 4), 10.0)
+        self.assertEqual(self.calc.multiplica(-3.0, -2.0), 6.0)
+
+    # * Teste de divisão com números decimais
+    def test_divide_decimal(self):
+        self.assertEqual(self.calc.divide(5.0, 2), 2.5)
+        self.assertEqual(self.calc.divide(7.5, 3), 2.5)
+
+    # * Teste de divisão com números negativos
+    def test_divide_negativo(self):
+        self.assertEqual(self.calc.divide(-9, 3), -3)
+        self.assertEqual(self.calc.divide(9, -3), -3)
+
+    # * Teste de divisão por zero (novamente)
+    def test_divide_por_zero(self):
+        self.assertRaises(ValueError, self.calc.divide, 10, 0)
+
+>>>>>>> 40045e1 (primeiro commit)
 
 if __name__ == '__main__':
     unittest.main()
